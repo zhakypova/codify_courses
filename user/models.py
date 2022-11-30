@@ -44,6 +44,7 @@ class Student(AbstractPerson):
 class Mentor(AbstractPerson):
     main_work = models.CharField(max_length=30, null=True)
     experience = models.DateField()
+    students = models.ManyToManyField(Student, through='Course')
 
 
 class Course(models.Model):
